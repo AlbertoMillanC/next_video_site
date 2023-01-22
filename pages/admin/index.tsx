@@ -39,7 +39,7 @@ const AdminIndex: NextPage<AdminIndexPageProps> = ({ courses }) => {
         )}
 
         <Link href="/admin/courses/new">
-          <Button>Create a course</Button>
+          <Button>Cree un curso</Button>
         </Link>
       </>
     )
