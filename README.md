@@ -1,3 +1,59 @@
+Este proyecto demuestra cómo puede usar Next.js y Mux para construir su propia plataforma de curso de video. Es posible que utilice este repositorio como punto de partida para construir su propia plataforma de curso de video con restricciones de membresía. Sientase libre de navegar el código fuente para ver cómo puede usar las APIs de video de Mux para subir, codificar y reproducir videos en su aplicación Next.js. Puede probar nuestra versión alojada de la aplicación en https://video-course-starter-kit.mux.dev
+
+Detalles de la pila
+Usamos herramientas modernas para construir este proyecto de ejemplo, incluyendo:
+
+Escrito en TypeScript
+Tailwind para el estilo CSS
+Planetscale para la persistencia de datos
+Prisma para ORM
+NextAuth para la autenticación a través de GitHub
+Mux para el streaming de video y la generación de miniaturas
+Mux Player para la reproducción de video
+Mux Uploader para la subida de video
+Despliegue su propio
+Regístrese para una cuenta de Mux
+Mux codificará y servirá todos los videos dentro del curso de video. Para comenzar con $20 de crédito gratis, regístrese para una cuenta de Mux
+
+Regístrese para una cuenta de Planetscale
+Planetscale es una plataforma de base de datos sin servidor compatible con MySQL. Registrarse en Planetscale es gratis, puede registrar su cuenta aquí si aún no tiene una.
+
+Instale este repositorio
+Ejecute los siguientes tres comandos para clonar este repositorio e instalar sus dependencias:
+
+Copy code
+git clone https://github.com/muxinc/video-course-starter-kit.git
+cd video-course-starter-kit
+yarn
+Crear un archivo .env.local
+Este proyecto utiliza varios secretos para acceder a las diferentes cuentas utilizadas en todo el código. Puede configurar estos valores localmente copiando el archivo .env.local.example a un nuevo archivo llamado .env.local y completando los valores a medida que los reciba en los pasos a continuación. También no olvide agregar los valores a las variables de entorno del proyecto en producción en Vercel.
+
+Configuración de la cuenta de Mux
+Para autenticar esta aplicación con su cuenta de Mux, cree un nuevo token de acceso dentro del panel de Mux y copie el ID y el secreto del token de acceso en su archivo .env.local y en las variables de entorno de Vercel.
+
+Configuración de la base de datos
+Primero, asegúrese de tener mysql-client instalado localmente para poder aprovechar al máximo la herramienta pscale CLI. En MacOS con Homebrew instalado, puede ejecutar el siguiente comando en su terminal:
+
+Copy code
+brew install mysql-client
+A continuación, instale la CLI de Planetscale. De nuevo, en MacOS, este comando hará la magia:
+
+Copy code
+brew install planetscale/tap/pscale
+A continuación, autorice la CLI de Planetscale con su cuenta recién creada ejecutando:
+
+Copy code
+pscale auth
+Cree una nueva base de datos en su cuenta de Planetscale llamada video-course-starter-kit
+
+Copy code
+pscale database create video-course-starter-kit
+Siga el enlace que se le proporciona después de ejecutar este comando para obtener la cadena de conexión de su base de datos.
+
+Copie el valor resultante de la url de base de datos autenticada en su archivo .env.local y en las variables de entorno de Vercel. Conectaremos a esta base de datos localmente abriendo una conexión a ella.
+
+En resumen, este proyecto es un kit de inicio para construir una plataforma de cursos de video con Next.js y Mux. Se utilizaron herramientas modernas como TypeScript, Tailwind, Planetscale, Prisma, NextAuth, Mux, Mux Player y Mux Uploader. Para implementar su propia versión, se deben registrar cuentas en Mux y Planetscale, clonar el repositorio, crear un archivo .env.local y configurar las cuentas de Mux y la base de datos en Planetscale. También es necesario tener instalado mysql-client y la CLI de Planetscale.
+
 # Video Course Starter Kit
 
 This project demonstrates how you can use Next.js and Mux to build your own video course platform. You might use this repo as a starting point for building your own membership-gated video course platform. 
